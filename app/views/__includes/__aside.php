@@ -44,7 +44,7 @@
 
                       <!-- INICIO -->
                       <li class="nav-item">
-                          <a href="<?= ROOT ?>/nosotros" class="nav-link <?= $URL_CONTROLLER == "nosotros" ? "active" : ""  ?>">
+                          <a href="<?= ROOT ?>nosotros" class="nav-link <?= $URL_CONTROLLER == "nosotros" ? "active" : ""  ?>">
                               <ion-icon name="receipt-outline"></ion-icon>
                               <p>Nosotros</p>
                           </a>
