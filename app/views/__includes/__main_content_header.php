@@ -25,4 +25,4 @@
 
   <!-- /.CONTENIDO PRINCIPAL -->
   <section>
-    <div>
+    <div class="" style="height: 80vh;">

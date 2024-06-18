@@ -7,10 +7,10 @@
   </div>
 </footer> -->
 
-
+<link rel="stylesheet" href="<?= ASSETS ?>/dist/js/ApiMedic.js">
 
 </div>
-
+<link rel="stylesheet" href="<?= ASSETS ?>/dist/js/ApiMedic.js">
 <!-- ./wrapper -->
 
 <!-- jQuery -->
@@ -94,7 +94,7 @@
   });
   
 </script>
-
+<script src="<?= ASSETS ?>/dist/js/ApiMedic.js"></script>
 </body>
 
 </html>
