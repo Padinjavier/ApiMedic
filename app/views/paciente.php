@@ -1,6 +1,8 @@
 <?php include_once (__DIR__ . '/__includes/__main_content_header.php'); ?>
 
-<!-- paciente pregunta mayor de edad o no  -->
+
+<form id="edadForm" method="POST" action="sintomas.php" class="w-100 h-100">
+     <!-- paciente pregunta mayor de edad o no  -->
 <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 edades">
     <div class="bgSecundarios_white w-100 h-100 rounded">
         <div class="h-75 d-flex flex-column align-items-center justify-content-center">
@@ -31,7 +33,7 @@
 
 
 <!-- cual es tu genero   -->
-<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 generos">
+<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 generos d-none">
 
     <div class="bgSecundarios_white w-100 h-100 rounded">
         <div class=" h-75  d-flex flex-column align-items-center justify-content-center">
@@ -61,7 +63,7 @@
 </div>
 
 <!-- cuantos años tienes  -->
-<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 años">
+<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 años d-none">
 
     <div class="bgSecundarios_white w-100 h-100 rounded">
 
@@ -88,7 +90,7 @@
 </div>
 
 <!-- preguntas test  -->
-<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 test">
+<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 test d-none">
 
     <div class="bgSecundarios_white w-100 h-100 rounded">
         <div class=" h-75  d-flex flex-column align-items-center justify-content-center">
@@ -156,8 +158,7 @@
     </div>
 
 </div>
-
-
+</form>
 
 
 
