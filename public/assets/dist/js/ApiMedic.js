@@ -1,13 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const circles = document.querySelectorAll('.circle');
-  const sidebar = document.querySelector('.main-sidebar.sidebar-dark-primary.elevation-4');
-  const inicioNav = document.querySelector('nav.inicio');
-  const progressBarNav = document.querySelector('nav.progress_bar');
+document.addEventListener("DOMContentLoaded", function () {
+  const circles = document.querySelectorAll(".circle");
+  const sidebar = document.querySelector(
+    ".main-sidebar.sidebar-dark-primary.elevation-4"
+  );
+  const inicioNav = document.querySelector("nav.inicio");
+  const progressBarNav = document.querySelector("nav.progress_bar");
 
-  circles.forEach(circle => {
-    circle.addEventListener('click', function() {
+  circles.forEach((circle) => {
+    circle.addEventListener("click", function () {
       if (sidebar) {
-        sidebar.classList.toggle('d-none');
+        sidebar.classList.toggle("d-none");
       }
     });
   });
@@ -16,31 +18,29 @@ document.addEventListener('DOMContentLoaded', function() {
   var currentUrl = window.location.pathname;
 
   // Obtén solo la última parte de la URL
-  var urlSegments = currentUrl.split('/');
-  var lastSegment = '/' + urlSegments[urlSegments.length - 1];
-  console.log(lastSegment); // Esto debería imprimir '/paciente', '/bienvenida', etc.
+  var urlSegments = currentUrl.split("/");
+  var lastSegment = "/" + urlSegments[urlSegments.length - 1];
 
   // Mapeo de URLs a los índices de las etapas
   var stepMap = {
-    '/bienvenida': 0,
-    '/paciente': 1,
-    '/sintomas': 2,
-    '/entrevistas': 3,
-    '/resultados': 4
+    "/bienvenida": 0,
+    "/paciente": 1,
+    "/sintomas": 2,
+    "/entrevistas": 3,
+    "/resultados": 4,
   };
 
   // Verifica si la URL termina en '/APIMEDIC/'
-  if (currentUrl.endsWith('/ApiMedic/')) {
+  if (currentUrl.endsWith("/ApiMedic/")) {
     if (inicioNav) {
-      console.log(currentUrl.endsWith('/ApiMedic/'))
-      inicioNav.classList.remove('d-none');
-      progressBarNav.classList.add('d-none');
+      console.log(currentUrl.endsWith("/ApiMedic/"));
+      inicioNav.classList.remove("d-none");
+      progressBarNav.classList.add("d-none");
     }
   } else {
-    console.log(currentUrl.endsWith('/ApiMedic/'))
 
-    progressBarNav.classList.remove('d-none');
-    inicioNav.classList.add('d-none');
+    progressBarNav.classList.remove("d-none");
+    inicioNav.classList.add("d-none");
   }
 
   // Obtén el índice de la etapa actual
@@ -49,65 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
   // Verifica que la URL esté en el mapa
   if (currentStepIndex !== undefined) {
     // Selecciona todas las etapas y círculos
-    var progressBar = document.querySelector('.progress-bar');
+    var progressBar = document.querySelector(".progress-bar");
 
     // Marca todas las etapas anteriores y la actual como completadas
     for (var i = 0; i <= currentStepIndex; i++) {
-      circles[i].classList.add('active');
+      circles[i].classList.add("active");
       if (i !== 0) {
         circles[i].innerHTML = '<i class="bi bi-check-lg"></i>';
       }
     }
 
     // Actualiza el ancho de la barra de progreso
-    progressBar.style.width = ((currentStepIndex + 1) * 25) + '%';
+    progressBar.style.width = (currentStepIndex + 1) * 25 + "%";
   }
 
-  // Añadir evento para los inputs de edad
-  const edadInputs = document.querySelectorAll('input[name="edad"]');
-  const divEdades = document.getElementById('edades');
-  const divGeneros = document.querySelector('.generos');
+  const edadInput = document.getElementById("años");
 
-  edadInputs.forEach(input => {
-    input.addEventListener('change', function() {
-      divEdades.classList.add('d-none');
-      divGeneros.classList.remove('d-none');
-    });
-  });
-
-  // Añadir evento para los inputs de género
-  const sexoInputs = document.querySelectorAll('input[name="sexo"]');
-  const divAños = document.querySelector('.años');
-
-  sexoInputs.forEach(input => {
-    input.addEventListener('change', function() {
-      divGeneros.classList.add('d-none');
-      divAños.classList.remove('d-none');
-    });
-  });
-
-  // Función para deseleccionar todos los checkboxes dentro de un div específico
-  function deseleccionarCheckboxes(div) {
-    const checkboxes = div.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-      checkbox.checked = false;
-    });
-  }
-
-  // Añadir evento para los botones "Atrás"
-  const botonesAtras = document.querySelectorAll('.button_atras');
-
-  botonesAtras.forEach(button => {
-    button.addEventListener('click', function() {
-      if ((divEdades.classList.contains('d-none'))) {
-        divEdades.classList.remove('d-none');
-        divGeneros.classList.add('d-none');
-        deseleccionarCheckboxes(divEdades);
-      } else if ((divGeneros.classList.contains('d-none'))) {
-        divGeneros.classList.remove('d-none');
-        divAños.classList.add('d-none');
-      }
-    });
+  edadInput.addEventListener("keydown", function (event) {
+    if (event.key === "e") {
+      event.preventDefault();
+      console.log("No se permiten números en notación científica.");
+      // alert('No se permiten números en notación científica.');
+    }
   });
 });
 
@@ -126,12 +89,17 @@ function bienvenida() {
   progressBarNav.classList.remove('d-none');
 }
 
-const edadInput = document.getElementById('edad');
 
-edadInput.addEventListener('keydown', function(event) {
-  if (event.key === 'e') {
-    event.preventDefault();
-    console.log('No se permiten números en notación científica.');
-    // alert('No se permiten números en notación científica.');
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleInputs = document.querySelectorAll(".toggle-div");
+
+  toggleInputs.forEach((input) => {
+    input.addEventListener("click", function () {
+      const hideClass = this.getAttribute("data-hide");
+      const showClass = this.getAttribute("data-show");
+
+      document.querySelector(hideClass).classList.add("d-none");
+      document.querySelector(showClass).classList.remove("d-none");
+    });
+  });
 });
