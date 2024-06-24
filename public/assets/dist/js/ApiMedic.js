@@ -36,13 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
       inicioNav.classList.remove('d-none');
       progressBarNav.classList.add('d-none');
     }
-    // if (progressBarNav) {
-    //   progressBarNav.classList.add('d-none');
-    //   inicioNav.classList.remove('d-none');
-    // }
-  }else{
+  } else {
     console.log(currentUrl.endsWith('/ApiMedic/'))
-  
+
     progressBarNav.classList.remove('d-none');
     inicioNav.classList.add('d-none');
   }
@@ -66,12 +62,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // Actualiza el ancho de la barra de progreso
     progressBar.style.width = ((currentStepIndex + 1) * 25) + '%';
   }
+
+  // Añadir evento para los inputs de edad
+  const edadInputs = document.querySelectorAll('input[name="edad"]');
+  const divEdades = document.getElementById('edades');
+  const divGeneros = document.querySelector('.generos');
+
+  edadInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      divEdades.classList.add('d-none');
+      divGeneros.classList.remove('d-none');
+    });
+  });
+
+  // Añadir evento para los inputs de género
+  const sexoInputs = document.querySelectorAll('input[name="sexo"]');
+  const divAños = document.querySelector('.años');
+
+  sexoInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      divGeneros.classList.add('d-none');
+      divAños.classList.remove('d-none');
+    });
+  });
+
+  // Función para deseleccionar todos los checkboxes dentro de un div específico
+  function deseleccionarCheckboxes(div) {
+    const checkboxes = div.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+  }
+
+  // Añadir evento para los botones "Atrás"
+  const botonesAtras = document.querySelectorAll('.button_atras');
+
+  botonesAtras.forEach(button => {
+    button.addEventListener('click', function() {
+      if ((divEdades.classList.contains('d-none'))) {
+        divEdades.classList.remove('d-none');
+        divGeneros.classList.add('d-none');
+        deseleccionarCheckboxes(divEdades);
+      } else if ((divGeneros.classList.contains('d-none'))) {
+        divGeneros.classList.remove('d-none');
+        divAños.classList.add('d-none');
+      }
+    });
+  });
 });
 
 
-
-
-function bienvenida(){
+function bienvenida() {
   const principal = document.querySelector('div.principal');
   principal.classList.add('d-none');
 
@@ -79,10 +120,10 @@ function bienvenida(){
   bienvenida.classList.remove('d-none');
 
   const inicioNav = document.querySelector('nav.inicio');
-  inicioNav.classList.add('d-none')
+  inicioNav.classList.add('d-none');
 
   const progressBarNav = document.querySelector('nav.progress_bar');
-  progressBarNav.classList.remove('d-none')
+  progressBarNav.classList.remove('d-none');
 }
 
 const edadInput = document.getElementById('edad');
