@@ -153,3 +153,76 @@ $(document).ready(function () {
   }
 });
 /* seleccion de sintomas  */
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const edadInput = document.getElementById("años");
+  const sexoFemenino = document.getElementById("female");
+  const preguntaEmbarazo = document.querySelector(".embarazada");
+  const mayor18 = document.getElementById("mayor-18");
+  const menor18 = document.getElementById("menor-18");
+  const botonSiguiente = document.querySelector(".button_siguiente");
+
+  // Función para manejar la visibilidad de la pregunta de embarazo y resetear checkboxes
+  function toggleEmbarazoVisibility() {
+      if (sexoFemenino.checked) {
+          preguntaEmbarazo.removeClass = "d-none"; // Mostrar la pregunta si es Femenino
+          // Mostrar todas las alternativas de la pregunta de embarazo
+          document.querySelectorAll('input[type="checkbox"][name="embarazo"]').forEach((checkbox) => {
+            checkbox.checked = false; // Deseleccionar la checkbox
+            checkbox.closest('td').removeClass = "d-none";
+        });
+      } else {
+          preguntaEmbarazo.style.display = "d-none"; // Ocultar la pregunta si es Masculino
+          // Ocultar y deseleccionar todas las alternativas de la pregunta de embarazo
+          document.querySelectorAll('input[type="checkbox"][name="embarazo"]').forEach((checkbox) => {
+            checkbox.checked = false; // Deseleccionar la checkbox
+            checkbox.closest('td').style.display = "d-none"; // Ocultar el contenedor de la checkbox (td)
+        });
+        
+      }
+  }
+
+  // Función para deshabilitar el botón siguiente si no hay una edad válida
+  function updateAgeValidation() {
+      const edad = parseInt(edadInput.value);
+
+      if (mayor18.checked && (edad < 18 || isNaN(edad))) {
+          edadInput.classList.add("input-error");
+          botonSiguiente.disabled = true;
+      } else if (menor18.checked && (edad > 17 || isNaN(edad))) {
+          edadInput.classList.add("input-error");
+          botonSiguiente.disabled = true;
+      } else {
+          edadInput.classList.remove("input-error");
+          botonSiguiente.disabled = false;
+      }
+  }
+
+  // Manejar cambios en la selección de mayor o menor de 18 años
+  document.querySelectorAll('input[name="edad"]').forEach((radio) => {
+      radio.addEventListener("change", function () {
+          updateAgeValidation();
+          if (this.checked && this.value === "18+") {
+              edadInput.setAttribute("min", "18");
+              edadInput.removeAttribute("max");
+          } else if (this.checked && this.value === "-18") {
+              edadInput.setAttribute("max", "17");
+              edadInput.removeAttribute("min");
+          }
+      });
+  });
+
+  // Llamar a las funciones al cargar la página
+  toggleEmbarazoVisibility();
+  updateAgeValidation();
+
+  // Manejar cambios en el campo de edad directamente
+  edadInput.addEventListener("input", updateAgeValidation);
+
+  // Manejar cambios en la selección de género para la pregunta de embarazo
+  sexoFemenino.addEventListener("change", toggleEmbarazoVisibility);
+  document.getElementById("male").addEventListener("change", toggleEmbarazoVisibility);
+});
