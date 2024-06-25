@@ -28,10 +28,11 @@ class PacienteController extends Controller
             
             // Guardar otras variables según sea necesario
 
-            // Redirigir a la vista de síntomas
-            header('Location: ' . ROOT . 'sintomas');
-            exit();
+           
         }
+         // Redirigir a la vista de síntomas
+         header('Location: ' . ROOT . 'sintomas');
+         exit();
     }
    
 }
