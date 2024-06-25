@@ -14,6 +14,19 @@ class SintomasController extends Controller
         $data['sobrepeso'] = isset($_SESSION['sobrepeso']) ? $_SESSION['sobrepeso'] : '';
         $data['hipertension'] = isset($_SESSION['hipertension']) ? $_SESSION['hipertension'] : '';
 
+        
+        // Obtener los síntomas actuales si existen
+        $data['sintomas'] = isset($_SESSION['sintomas']) ? $_SESSION['sintomas'] : [];
+
+        // Limpiar las variables de sesión de síntomas para evitar duplicados
+        unset($_SESSION['sintomas']);
+
+        // Obtener la respuesta de si vas a ir al medico o no 
+        $data['irmedico'] = isset($_SESSION['irmedico']) ? $_SESSION['irmedico'] : [];
+
+        // Limpiar las variables de la respuesta
+        unset($_SESSION['irmedico']);
+
         // Recuperar otras variables según sea necesario
 
         $this->view("sintomas", $data);
