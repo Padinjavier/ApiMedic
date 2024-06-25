@@ -2,7 +2,6 @@
 
 <!-- TU CONTENIDO -->
 
-<<<<<<< HEAD
 <!-- <link rel="stylesheet" href="<?= ASSETS ?>/dist/css/ApiMedic.css"> -->
 
 <div class="d-flex justify-content-center bgblue_primary pr-5 pl-5 pb-4 pt-4 m-0 h-100">
@@ -30,12 +29,3 @@
 
 
 <?php include_once (__DIR__ . '/__includes/__main_content_footer.php'); ?>
-=======
-<h1>Inicio</h1>
-
-
-<?php include_once(__DIR__ . '/__includes/__main_content_footer.php'); ?>
-
-
-
->>>>>>> d928979c0ad61545db82ec904a4761f14b507c9e
