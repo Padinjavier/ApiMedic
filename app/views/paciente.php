@@ -111,7 +111,7 @@
                         <tr>
                             <td>Mis padres, hermanos, abuelos o yo tenemos una 
                                 enfermedad alérgica, p. ej., asma, dermatitis atópica 
-                                o una alergia alimentaria.
+                                o una alergia alimentaria.</td>
                             <td><input type="checkbox" name="alergias" value="si">Sí</td>
                             <td><input type="checkbox" name="alergias" value="no">No</td>
                             <td><input type="checkbox" name="alergias" value="nls">No lo sé</td>

@@ -157,15 +157,31 @@ $(document).ready(function () {
     updateWarningMessage();
   });
 
+  // Función para actualizar el mensaje de advertencia y validar el botón de Siguiente
   function updateWarningMessage() {
     const symptomCount =
       $("#selectedSymptoms").children(".selected-symptom").length;
-    if (symptomCount > 0 && symptomCount < 3) {
+
+    if (symptomCount < 3) {
       $("#warningMessage").show();
     } else {
       $("#warningMessage").hide();
     }
   }
+  // // Función para actualizar el mensaje de advertencia y validar el botón de Siguiente
+  // function updateWarningMessagebtn() {
+  //   const symptomCount =
+  //     $("#selectedSymptoms").children(".selected-symptom").length;
+  //   const botonSiguiente2 = document.querySelector(".button_siguiente");
+
+  //   if (symptomCount < 3) {
+  //     botonSiguiente2.disabled = true;
+  //   } else {
+  //     botonSiguiente2.disabled = false;
+  //   }
+  // }
+  // // Llamada inicial para deshabilitar el botón de Siguiente si no hay suficientes síntomas seleccionados
+  // updateWarningMessagebtn();
 });
 /* seleccion de sintomas  */
 

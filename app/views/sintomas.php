@@ -14,6 +14,7 @@
                             <i class="fa fa-search"></i>
                         </div>
                         <div id="suggestions" class="suggestions"></div>
+                        <!-- los sintomas estan en el JS linea 105  -->
                         <div class="selected-symptoms" id="selectedSymptoms">
                             <span id="defaultText" class="textSecundarios_black">Por favor, ingrese más síntomas.</span>
                         </div>
@@ -25,9 +26,9 @@
                 </div>
             </div>
             <div class="h-25 bortop_primary conten_button pr-4 pl-4">
-                <button type="button" class="button button_siguiente nav-link" onclick="window.location.href='<?= ROOT ?>pacientes'">Atrás</button>
+                <button type="button" class="button button_atras nav-link" onclick="window.location.href='<?= ROOT ?>pacientes'">Atrás</button>
                 <!-- Agregamos el botón submit dentro del formulario -->
-                <button type="button" class="button button_siguiente toggle-div" data-hide=".enfermedades" data-show=".irmedico">Siguiente</button>
+                <button type="button" class="button button_siguiente buttondisabled toggle-div " data-hide=".enfermedades" data-show=".irmedico">Siguiente</button>
             </div>
         </div>
     </div>
@@ -50,7 +51,7 @@
                         </label>
                         <label for="no" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
                             <input type="radio" id="no" name="irmedico" value="no" class="d-none "  onclick="this.form.submit()">
-                            <i class="bi bi-gender-male display-1"></i>
+                            <i class="bi bi-x-circle display-1"></i>
                             <p>No</p>
                         </label>
                         <label for="nolose" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
@@ -62,7 +63,7 @@
                 </div>
             </div>
             <div class="h-25 bortop_primary conten_buttonatras pl-4 pr-4">
-                <button type="button" class="button button_atras toggle-div" data-hide=".irmedico" data-show=".enfermedades">Atrás</button>
+                <button type="button" class="button button_atras  toggle-div" data-hide=".irmedico" data-show=".enfermedades">Atrás</button>
             </div>
         </div>
     </div>
