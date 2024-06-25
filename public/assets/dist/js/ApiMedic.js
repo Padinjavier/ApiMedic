@@ -103,3 +103,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+
+   /* seleccion de sintomas  */
+   $(document).ready(function () {
+    const sintomas = ["Dolor de cabeza", "Dolor de garganta", "Fiebre", "Tos", "Náuseas", "Fatiga", "Mareos", "Mareo2", "Mareo3", "Mareos4", "Mareos5", "Mareos6", "Mareos7"];
+
+    $('#sintomaInput').on('input', function () {
+        const input = $(this).val().toLowerCase();
+        const suggestions = sintomas.filter(sintoma => sintoma.toLowerCase().includes(input));
+        $('#suggestions').empty();
+        suggestions.forEach(suggestion => {
+            $('#suggestions').append('<div>' + suggestion + '</div>');
+        });
+    });
+
+    $(document).on('click', '#suggestions div', function () {
+        const selected = $(this).text();
+        const exists = $('#selectedSymptoms').find(`div:contains(${selected})`).length > 0;
+        if (!exists) {
+            $('#selectedSymptoms').append(`<div class="selected-symptom">${selected} <span class="close">×</span><input type="hidden" name="sintomas[]" value="${selected}"></div>`);
+            $('#selectedSymptoms').addClass('has-symptoms');
+            $('#selectedSymptoms').css({'min-height': 'auto','background': 'white'});
+            $('#defaultText').hide();
+            updateWarningMessage();
+        }
+        $('#sintomaInput').val('');
+        $('#suggestions').empty();
+    });
+
+    $(document).on('click', '.selected-symptom .close', function () {
+        $(this).parent().remove();
+        if ($('#selectedSymptoms').children('.selected-symptom').length === 0) {
+            $('#selectedSymptoms').removeClass('has-symptoms');
+            $('#selectedSymptoms').css('min-height', '140px');
+            $('#defaultText').show();
+        }
+        updateWarningMessage();
+    });
+
+    function updateWarningMessage() {
+        const symptomCount = $('#selectedSymptoms').children('.selected-symptom').length;
+        if (symptomCount > 0 && symptomCount < 3) {
+            $('#warningMessage').show();
+        } else {
+            $('#warningMessage').hide();
+        }
+    }
+});
+   /* seleccion de sintomas  */
