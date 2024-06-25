@@ -6,7 +6,7 @@
         ?>
 
       <!-- Main Sidebar Container -->
-      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <aside class="main-sidebar sidebar-dark-primary elevation-4 d-none" >
           <!-- Brand Logo -->
           <a href="index3.html" class="brand-link">
               <!-- <img
@@ -42,15 +42,37 @@
                           </a>
                       </li>
 
-                      <!-- INICIO -->
+                      <!-- Paciente -->
                       <li class="nav-item">
-                          <a href="<?= ROOT ?>nosotros" class="nav-link <?= $URL_CONTROLLER == "nosotros" ? "active" : ""  ?>">
+                          <a href="<?= ROOT ?>paciente" class="nav-link <?= $URL_CONTROLLER == "paciente" ? "active" : ""  ?>">
                               <ion-icon name="receipt-outline"></ion-icon>
-                              <p>Nosotros</p>
+                              <p>Paciente</p>
+                          </a>
+                      </li>
+                     
+                      <!-- Sintomas -->
+                      <li class="nav-item">
+                          <a href="<?= ROOT ?>sintomas" class="nav-link <?= $URL_CONTROLLER == "sintomas" ? "active" : ""  ?>">
+                              <ion-icon name="receipt-outline"></ion-icon>
+                              <p>Síntomas</p>
                           </a>
                       </li>
 
+                      <!-- Entrevistas -->
+                      <li class="nav-item">
+                          <a href="<?= ROOT ?>entrevistas" class="nav-link <?= $URL_CONTROLLER == "entrevistas" ? "active" : ""  ?>">
+                              <ion-icon name="receipt-outline"></ion-icon>
+                              <p>Entrevistas</p>
+                          </a>
+                      </li>
 
+                       <!-- Resultados -->
+                       <li class="nav-item">
+                          <a href="<?= ROOT ?>resultados" class="nav-link <?= $URL_CONTROLLER == "resultados" ? "active" : ""  ?>">
+                              <ion-icon name="receipt-outline"></ion-icon>
+                              <p>Resultados</p>
+                          </a>
+                      </li>
                   </ul>
               </nav>
               <!-- /.sidebar-menu -->
