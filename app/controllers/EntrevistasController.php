@@ -16,7 +16,6 @@ class EntrevistasController extends Controller
 
         $data['irmedico'] = isset($_SESSION['irmedico']) ? $_SESSION['irmedico'] : '';
 
-        $this->view("entrevistas", $data);
         // Recuperar otras variables según sea necesario
          
         $this->view("entrevistas", $data);
