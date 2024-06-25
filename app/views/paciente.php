@@ -59,11 +59,11 @@
             <h4 class="textblue_primary">¿Cúal es tu sexo?</h4>
         </div>
         <div class="d-flex flex-row gap-15"  >
-            <button class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded"  style="width: 275px; height: 260px;">
+            <button class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded"  style="width: 275px; height: 200px;">
             <i class="bi bi-gender-female display-1"></i>
                 <p>Mujer</p>
             </button>
-            <button class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded"  style="width: 275px; height: 260px;">
+            <button class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded"  style="width: 275px; height: 200px;">
             <i class="bi bi-gender-male display-1"></i>
                 <p>Hombre</p>
             </button>

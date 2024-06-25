@@ -28,11 +28,24 @@
   border: 2px solid var(--Blue_primary);
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 .conten_button{
   display: flex;
-    align-items: center;
-    justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+}
+.conten_buttonnext{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.conten_buttonatras{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .button{
