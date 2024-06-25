@@ -1,7 +1,7 @@
 <?php include_once(__DIR__ . '/__includes/__main_content_header.php'); ?>
 
 <!-- preguntas de sintomas  -->
-<form id="sintomasForm" method="POST" action="<?= ROOT ?>entrevista/store" class="w-100 h-100">
+<form id="sintomasForm" method="POST" action="<?= ROOT ?>entrevistas/store" class="w-100 h-100">
 <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 preguntasdesitomas">
     <div class="bgSecundarios_white w-100 h-100 rounded">
         <div class="h-75 d-flex flex-column align-items-center justify-content-center">
@@ -55,7 +55,7 @@
         const checkboxCell = document.createElement('td');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.name = 'sintomas[]';
+        checkbox.name = 'sintomas2[]';
         checkbox.value = sintoma;
         checkboxCell.appendChild(checkbox);
         
