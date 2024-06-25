@@ -5,7 +5,7 @@
 <!-- <link rel="stylesheet" href="<?= ASSETS ?>/dist/css/ApiMedic.css"> -->
 
 <div class="d-flex justify-content-center bgblue_primary pr-5 pl-5 pb-4 pt-4 m-0 h-100">
-  <div class="row  bgSecundarios_white p-4 mg-4 rounded">
+  <div class="row  bgSecundarios_white p-4 rounded">
     <div class="form-group col-md-6" style="    display: flex;
     flex-direction: column;
     justify-content: center;">
@@ -19,33 +19,11 @@
         <p><i class="bi bi-check-lg"></i> Clínicamente validado con casos de pacientes reales</p>
     </div>
     <div class="form-group col-md-6 d-flex justify-content-center align-items-center">
-      <img src="http://192.168.1.41/ApiMedic/public/assets//dist/img/Photo.png" alt="" class="">
+      <img src="<?= ASSETS ?>/dist/img/Photo.png" alt="" >
     </div>
   </div>
 </div>
-<script>
-        function enterFullscreen() {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-                document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                document.documentElement.webkitRequestFullscreen();
-            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-                document.documentElement.msRequestFullscreen();
-            }
-        }
 
-        document.getElementById('fullscreenButton').addEventListener('click', function() {
-            enterFullscreen();
-        });
-
-        document.addEventListener('fullscreenchange', function() {
-            if (!document.fullscreenElement) {
-                enterFullscreen();
-            }
-        });
-    </script>
 
 
 
