@@ -73,7 +73,7 @@
         </div>
         <div class="h-25  bortop_primary conten_button pl-4 pr-4">
             <button type="button" class="button button_atras toggle-div" data-hide=".años" data-show=".generos">Atrás</button>
-            <button type="button" class="button button_siguiente toggle-div" data-hide=".años" data-show=".test">Siguiente</button>
+            <button type="button" class="button button_siguiente buttondisabled toggle-div" data-hide=".años" data-show=".test">Siguiente</button>
         </div>
     </div>
 </div>
@@ -109,9 +109,9 @@
                             <td><input type="checkbox" name="fumador" value="nls">No lo sé</td>
                         </tr>
                         <tr>
-                            <td>Mis padres, hermanos, abuelos o yo tenemos una <br>
-                                enfermedad alérgica, p. ej., asma, dermatitis atópica <br>
-                                o una alergia alimentaria.</td>
+                            <td>Mis padres, hermanos, abuelos o yo tenemos una 
+                                enfermedad alérgica, p. ej., asma, dermatitis atópica 
+                                o una alergia alimentaria.
                             <td><input type="checkbox" name="alergias" value="si">Sí</td>
                             <td><input type="checkbox" name="alergias" value="no">No</td>
                             <td><input type="checkbox" name="alergias" value="nls">No lo sé</td>

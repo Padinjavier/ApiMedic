@@ -66,6 +66,18 @@ top: 565px;
 border-radius: 10px;
 border: none;
 }
+/* .buttondisabled {
+    background: var(--Secundarios_black) !important;
+} */
+
+.input-error {
+    border: 2px solid red; /* Estilo de borde rojo para resaltar el error */
+}
+
+.button:disabled {
+    opacity: 0.7; /* Opacidad reducida para indicar que el botón está deshabilitado */
+    cursor: not-allowed; /* Cursor no permitido cuando el botón está deshabilitado */
+}
 .button_atras{
 /* Blue/secondary */
 background: var(--Blue_secondary);
@@ -88,7 +100,9 @@ ul {
     /* padding: 0 20px; */
     margin: 0 auto; /* Center align */
   }
-
+/* .imputerror{
+    border: 1px solid red;
+} */
   .progress {
     position: relative;
     height: 4px;
