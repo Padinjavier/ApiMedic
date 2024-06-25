@@ -1,7 +1,7 @@
 <?php include_once (__DIR__ . '/__includes/__main_content_header.php'); ?>
 
 
-<form id="edadForm" method="POST" action="sintomas.php" class="w-100 h-100">
+<form id="edadForm" method="POST" action="<?= ROOT ?>paciente/store" class="w-100 h-100">
      <!-- paciente pregunta mayor de edad o no  -->
 <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 edades" id="edades">
     <div class="bgSecundarios_white w-100 h-100 rounded">
@@ -11,12 +11,12 @@
             </div>
             <div class="d-flex flex-row gap-15">
                 <label for="mayor-18" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded">
-                    <input type="radio" id="mayor-18" name="edad" value="18+" class="d-none">
+                    <input type="radio" id="mayor-18" name="edad" value="18+" class="d-none toggle-div" data-hide=".edades" data-show=".generos">
                     <i class="bi bi-person-fill-add display-1"></i>
                     <p>Tengo 18 años o más</p>
                 </label>
                 <label for="menor-18" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded">
-                    <input type="radio" id="menor-18" name="edad" value="-18" class="d-none">
+                    <input type="radio" id="menor-18" name="edad" value="-18" class="d-none toggle-div" data-hide=".edades" data-show=".generos">
                     <i class="bi bi-person-fill-add display-1"></i>
                     <p>Tengo menos de 18 años</p>
                 </label>
@@ -39,19 +39,19 @@
             </div>
             <div class="d-flex flex-row gap-15">
                 <label for="female" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
-                    <input type="radio" id="female" name="sexo" value="female" class="d-none">
+                    <input type="radio" id="female" name="sexo" value="Femenino" class="d-none toggle-div" data-hide=".generos" data-show=".años">
                     <i class="bi bi-gender-female display-1"></i>
                     <p>Femenino</p>
                 </label>
                 <label for="male" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
-                    <input type="radio" id="male" name="sexo" value="male" class="d-none">
+                    <input type="radio" id="male" name="sexo" value="Masculino" class="d-none toggle-div" data-hide=".generos" data-show=".años">
                     <i class="bi bi-gender-male display-1"></i>
                     <p>Masculino</p>
                 </label>
             </div>
         </div>
         <div class="h-25 bortop_primary conten_buttonatras pl-4 pr-4">
-            <button type="button" class="button button_atras">Atrás</button>
+            <button type="button" class="button button_atras toggle-div" data-hide=".generos" data-show=".edades">Atrás</button>
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
             <div class="d-flex flex-row align-items-flex-start justify-content-center w-100 h-100">
                 <div class="d-flex flex-column gap-15 textblue_primary ">
                     <label for="">Edad</label>
-                    <input type="number" name="edad" id="edad" class="rounded p-3" style="width: 330px; height: 55px;" placeholder="Ingrese su edad" step="1" min="1">
+                    <input type="number" name="años" id="años" class="rounded p-3" style="width: 330px; height: 55px;" placeholder="Ingrese su edad" step="1" min="1">
                 </div>
                 <div class="form-group col-md-6 d-flex justify-content-center align-items-center w-50">
                     <img src="<?= ASSETS ?>/dist/img/Photo3.png" alt="" style="width: inherit;">
@@ -72,8 +72,8 @@
             </div>
         </div>
         <div class="h-25  bortop_primary conten_button pl-4 pr-4">
-            <button type="button" class="button button_atras">Atrás</button>
-            <button type="submit" class="button button_siguiente">Siguiente</button>
+            <button type="button" class="button button_atras toggle-div" data-hide=".años" data-show=".generos">Atrás</button>
+            <button type="button" class="button button_siguiente toggle-div" data-hide=".años" data-show=".test">Siguiente</button>
         </div>
     </div>
 </div>
@@ -139,11 +139,12 @@
             </div>
         </div>
         <div class="h-25  bortop_primary conten_button pl-4 pr-4">
-            <button type="button" class="button button_atras">Atrás</button>
+            <button type="button" class="button button_atras toggle-div" data-hide=".test" data-show=".años">Atrás</button>
             <button type="submit" class="button button_siguiente nav-link" onclick="window.location.href='<?= ROOT ?>sintomas'">Siguiente</button>
         </div>
     </div>
 </div>
+
 </form>
 
 <?php include_once (__DIR__ . '/__includes/__main_content_footer.php'); ?>
