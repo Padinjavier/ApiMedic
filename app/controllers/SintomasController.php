@@ -13,35 +13,33 @@ class SintomasController extends Controller
         $data['embarazo'] = isset($_SESSION['embarazo']) ? $_SESSION['embarazo'] : '';
         $data['sobrepeso'] = isset($_SESSION['sobrepeso']) ? $_SESSION['sobrepeso'] : '';
         $data['hipertension'] = isset($_SESSION['hipertension']) ? $_SESSION['hipertension'] : '';
- 
+
         // Recuperar otras variables según sea necesario
-        
+
         $this->view("sintomas", $data);
     }
 
     function store()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_SESSION['edad'] = $_POST['edad'];
-            $_SESSION['sexo'] = $_POST['sexo'];
-            $_SESSION['años'] = $_POST['años'];
-            $_SESSION['lesion'] = $_POST['lesion'];
-            $_SESSION['fumador'] = $_POST['fumador'];
-            $_SESSION['alergias'] = $_POST['alergias'];
-            $_SESSION['embarazo'] = $_POST['embarazo'];
-            $_SESSION['sobrepeso'] = $_POST['sobrepeso'];
-            $_SESSION['hipertension'] = $_POST['hipertension'];
-            
-            
-            
-            
-            
+            // Suponiendo que los datos se envían como un array en el campo 'sintomas[]'
+            if (isset($_POST['sintomas']) && is_array($_POST['sintomas'])) {
+                // Recorrer el array de 'sintomas[]'
+                foreach ($_POST['sintomas'] as $sintoma) {
+                    // Guardar cada valor en una variable de sesión
+                    $_SESSION['sintomas'][] = $sintoma;
+                }
+                $_SESSION['irmedico'] = $_POST['irmedico'];
+
+            }
+
             // Guardar otras variables según sea necesario
 
-            // Redirigir a la vista de síntomas
-            header('Location: ' . ROOT . 'entrevistas');
-            exit();
+            
         }
+        // Redirigir a la vista de síntomas
+        header('Location: ' . ROOT . 'entrevistas');
+        exit();
     }
 }
 ?>
