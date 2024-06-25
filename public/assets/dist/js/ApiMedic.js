@@ -84,3 +84,13 @@ function bienvenida(){
   const progressBarNav = document.querySelector('nav.progress_bar');
   progressBarNav.classList.remove('d-none')
 }
+
+const edadInput = document.getElementById('edad');
+
+edadInput.addEventListener('keydown', function(event) {
+  if (event.key === 'e') {
+    event.preventDefault();
+    console.log('No se permiten números en notación científica.');
+    // alert('No se permiten números en notación científica.');
+  }
+});
