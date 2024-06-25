@@ -4,8 +4,8 @@
 
 <!-- <link rel="stylesheet" href="<?= ASSETS ?>/dist/css/ApiMedic.css"> -->
 
-<div class="d-flex justify-content-center bgblue_primary pr-5 pl-5 pb-4 pt-4 m-0 h-100">
-  <div class="row  bgSecundarios_white p-4 rounded">
+<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100">
+  <div class="row  bgSecundarios_white p-4 w-100 h-100 rounded">
     <div class="form-group col-md-6" style="    display: flex;
     flex-direction: column;
     justify-content: center;">
