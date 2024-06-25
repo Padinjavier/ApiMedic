@@ -1,83 +1,8 @@
 <?php include_once (__DIR__ . '/__includes/__main_content_header.php'); ?>
 
-<style>
-    .bgblue_primary {
-        background-color: #007bff;
-        color: #fff;
-    }
-
-    .bgSecundarios_white {
-        background-color: #fff;
-        color: #333;
-    }
-
-    .rounded {
-        border-radius: 5px;
-    }
-
-    .input-icon {
-        position: relative;
-    }
-
-    .input-icon input {
-        padding-left: 30px;
-    }
-
-    .input-icon .fa-search {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #999;
-    }
-
-    .suggestions {
-        /* border: 1px solid #ccc; */
-        max-height: 150px;
-        overflow-y: auto;
-        /* position: absolute; */
-        width: calc(100% - 30px);
-        z-index: 1000;
-        background: #fff;
-    }
-
-    .suggestions div {
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .suggestions div:hover {
-        background-color: #f0f0f0;
-    }
-
-    .selected-symptoms {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-        border: 1px solid red;
-        background: #E9E9E9;
-    }
-
-    .selected-symptom {
-        background-color: #6c757d;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    .selected-symptom .close {
-        margin-left: 10px;
-        cursor: pointer;
-    }
-</style>
-
 <!-- Contenido del formulario -->
 <form id="sintomasForm" method="POST" action="<?= ROOT ?>sintomas/store" class="w-100 h-100">
-    <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100">
+    <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 enfermedades">
         <div class="bgSecundarios_white w-100 h-100 rounded">
             <div class="h-75 d-flex flex-column align-items-center justify-content-center p-5">
                 <h4 class="textblue_primary text-center pb-4">Vigilar mis síntomas</h4>
@@ -89,7 +14,10 @@
                             <i class="fa fa-search"></i>
                         </div>
                         <div id="suggestions" class="suggestions"></div>
-                        <div class="selected-symptoms" id="selectedSymptoms"></div>
+                        <div class="selected-symptoms" id="selectedSymptoms">
+                            <span id="defaultText" class="textSecundarios_black">Por favor, ingrese más síntomas.</span>
+                        </div>
+                        <div id="warningMessage"><i class="fa fa-exclamation-circle"></i> ¡Por favor, intente agregar más síntomas.</div>
                     </div>
                     <div class="form-group col-md-6 d-flex justify-content-center align-items-center w-50">
                         <img src="<?= ASSETS ?>/dist/img/Photo4.png" alt="" style="width: inherit;">
@@ -97,41 +25,45 @@
                 </div>
             </div>
             <div class="h-25 bortop_primary conten_button pl-4 pr-4">
-                <button type="button" class="button button_atras toggle-div" data-hide=".años"
-                    data-show=".generos">Atrás</button>
-                <button type="submit" class="button button_siguiente">Siguiente</button>
+            <button type="button" class="button button_siguiente nav-link" onclick="window.location.href='<?= ROOT ?>pacientes'">Atrás</button>
+                <button type="button" class="button button_siguiente toggle-div" data-hide=".enfermedades" data-show=".irmedico">Siguiente</button>
             </div>
         </div>
     </div>
+
+<!-- Consulta a un profecional -->
+<div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 irmedico d-none">
+    <div class="bgSecundarios_white w-100 h-100 rounded">
+        <div class=" h-75  d-flex flex-column align-items-center justify-content-center">
+            <div class="mb-3 text-center">
+                <h4 class="textblue_primary">¿Está pensando consultar a un profesional médico? </h4>
+                <p class="textblue_primary">Selecciona una opción</p>
+            </div>
+            <div class="d-flex flex-row gap-15">
+                <label for="si" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
+                    <input type="radio" id="si" name="irmedico" value="si" class="d-none toggle-div" data-hide=".generos" data-show=".años">
+                    <i class="bi bi-check-circle display-1"></i>
+                    <p>Si</p>
+                </label>
+                <label for="male" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
+                    <input type="radio" id="no" name="irmedico" value="no" class="d-none toggle-div" data-hide=".generos" data-show=".años">
+                    <i class="bi bi-gender-male display-1"></i>
+                    <p>No</p>
+                </label>
+                <label for="male" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
+                    <input type="radio" id="nolose" name="irmedico" value="no lo se" class="d-none toggle-div" data-hide=".generos" data-show=".años">
+                    <i class="bi bi-arrow-right-circle display-1"></i>
+                    <p>No lo sé</p>
+                </label>
+            </div>
+        </div>
+        <div class="h-25  bortop_primary conten_button pl-4 pr-4">
+            <button type="button" class="button button_atras toggle-div" data-hide=".irmedico" data-show=".enfermedades">Atrás</button>
+            <button type="submit" class="button button_siguiente nav-link" onclick="window.location.href='<?= ROOT ?>entrevistas'">Siguiente</button>
+        </div>
+    </div>
+</div>
+
 </form>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function () {
-        const sintomas = ["Dolor de cabeza", "Dolor de garganta", "Fiebre", "Tos", "Náuseas", "Fatiga", "Mareos"];
-
-        $('#sintomaInput').on('input', function () {
-            const input = $(this).val().toLowerCase();
-            const suggestions = sintomas.filter(sintoma => sintoma.toLowerCase().includes(input));
-            $('#suggestions').empty();
-            suggestions.forEach(suggestion => {
-                $('#suggestions').append('<div>' + suggestion + '</div>');
-            });
-        });
-
-        $(document).on('click', '#suggestions div', function () {
-            const selected = $(this).text();
-            const exists = $('#selectedSymptoms').find(`div:contains(${selected})`).length > 0;
-            if (!exists) {
-                $('#selectedSymptoms').append(`<div class="selected-symptom">${selected} <span class="close">×</span><input type="hidden" name="sintomas[]" value="${selected}"></div>`);
-            }
-            $('#sintomaInput').val('');
-            $('#suggestions').empty();
-        });
-
-        $(document).on('click', '.selected-symptom .close', function () {
-            $(this).parent().remove();
-        });
-    });
-</script>
 
 <?php include_once (__DIR__ . '/__includes/__main_content_footer.php'); ?>
