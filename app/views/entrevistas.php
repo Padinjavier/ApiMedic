@@ -1,10 +1,10 @@
 <?php include_once (__DIR__ . '/__includes/__main_content_header.php'); ?>
 
 <!-- preguntas de sintomas  -->
-<form id="sintomasForm" method="POST" action="<?= ROOT ?>resultados/store" class="w-100 h-100">
+<form id="sintomasForm" method="POST" action="<?= ROOT ?>entrevistas/store" class="w-100 h-100">
     <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 preguntasdesitomas">
         <div class="bgSecundarios_white w-100 h-100 rounded">
-            <div class="h-75 d-flex flex-column align-items-center justify-content-center">
+            <div class="h-75 d-flex flex-column align-items-center justify-content-center pt-4">
                 <div class="h-25 align-content-center">
                     <h4 class="textblue_primary">¿Tiene usted alguno de los siguientes síntomas?</h4>
                     <p>Seleccione todas las respuestas que correspondan</p>
@@ -80,7 +80,7 @@
     <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100">
         <div class="bgSecundarios_white w-100 h-100 rounded">
             <div class="h-75 d-flex flex-column align-items-center justify-content-center">
-                <div class="h-25 " style="display: flex; flex-direction: column;  align-items: center;">
+                <div class="h-25 pt-5" style="display: flex; flex-direction: column;  align-items: center;">
                     <h4 class="textblue_primary">¿Cuál es la intensidad de su dolor de cabeza?</h4>
                     <p>Seleccione una respuesta</p>
                 </div>

@@ -81,7 +81,7 @@
 <!-- preguntas test  -->
 <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 test d-none">
     <div class="bgSecundarios_white w-100 h-100 rounded">
-        <div class=" h-75  d-flex flex-column align-items-center justify-content-center">
+        <div class=" h-75  d-flex flex-column align-items-center justify-content-center pt-4">
             <div class="h-25 align-content-center">
                 <h4 class="textblue_primary">¿Alguna de las siguientes afirmaciones se aplica a usted?</h4>
             </div>
@@ -98,41 +98,41 @@
                     <tbody id="" class="textblue_primary" style="border: #0A83A1;">
                         <tr>
                             <td>Recientemente sufrí una lesión.</td>
-                            <td><input type="checkbox" name="lesion" value="si">Sí</td>
-                            <td><input type="checkbox" name="lesion" value="no">No</td>
-                            <td><input type="checkbox" name="lesion" value="nls">No lo sé</td>
+                            <td><input type="checkbox" name="lesion" value="si" class="mr-2">Sí</td>
+                            <td><input type="checkbox" name="lesion" value="no" class="mr-2">No</td>
+                            <td><input type="checkbox" name="lesion" value="nls" class="mr-2">No lo sé</td>
                         </tr>
                         <tr>
                             <td>He fumado cigarrillos durante al menos 10 años.</td>
-                            <td><input type="checkbox" name="fumador" value="si">Sí</td>
-                            <td><input type="checkbox" name="fumador" value="no">No</td>
-                            <td><input type="checkbox" name="fumador" value="nls">No lo sé</td>
+                            <td><input type="checkbox" name="fumador" value="si" class="mr-2">Sí</td>
+                            <td><input type="checkbox" name="fumador" value="no" class="mr-2">No</td>
+                            <td><input type="checkbox" name="fumador" value="nls" class="mr-2">No lo sé</td>
                         </tr>
                         <tr>
                             <td>Mis padres, hermanos, abuelos o yo tenemos una 
                                 enfermedad alérgica, p. ej., asma, dermatitis atópica 
                                 o una alergia alimentaria.</td>
-                            <td><input type="checkbox" name="alergias" value="si">Sí</td>
-                            <td><input type="checkbox" name="alergias" value="no">No</td>
-                            <td><input type="checkbox" name="alergias" value="nls">No lo sé</td>
+                            <td><input type="checkbox" name="alergias" value="si" class="mr-2">Sí</td>
+                            <td><input type="checkbox" name="alergias" value="no" class="mr-2">No</td>
+                            <td><input type="checkbox" name="alergias" value="nls" class="mr-2">No lo sé</td>
                         </tr>
                         <tr>
                             <td class="embarazada">Estoy embarazada.</td>
-                            <td><input type="checkbox" name="embarazo" value="si">Sí</td>
-                            <td><input type="checkbox" name="embarazo" value="no">No</td>
-                            <td><input type="checkbox" name="embarazo" value="nls">No lo sé</td>
+                            <td><input type="checkbox" name="embarazo" value="si" class="mr-2">Sí</td>
+                            <td><input type="checkbox" name="embarazo" value="no" class="mr-2">No</td>
+                            <td><input type="checkbox" name="embarazo" value="nls" class="mr-2">No lo sé</td>
                         </tr>
                         <tr>
                             <td>Tengo sobrepeso u obesidad.</td>
-                            <td><input type="checkbox" name="sobrepeso" value="si">Sí</td>
-                            <td><input type="checkbox" name="sobrepeso" value="no">No</td>
-                            <td><input type="checkbox" name="sobrepeso" value="nls">No lo sé</td>
+                            <td><input type="checkbox" name="sobrepeso" value="si" class="mr-2">Sí</td>
+                            <td><input type="checkbox" name="sobrepeso" value="no" class="mr-2">No</td>
+                            <td><input type="checkbox" name="sobrepeso" value="nls" class="mr-2">No lo sé</td>
                         </tr>
                         <tr>
                             <td>Tengo hipertensión.</td>
-                            <td><input type="checkbox" name="hipertension" value="si">Sí</td>
-                            <td><input type="checkbox" name="hipertension" value="no">No</td>
-                            <td><input type="checkbox" name="hipertension" value="nls">No lo sé</td>
+                            <td><input type="checkbox" name="hipertension" value="si" class="mr-2">Sí</td>
+                            <td><input type="checkbox" name="hipertension" value="no" class="mr-2">No</td>
+                            <td><input type="checkbox" name="hipertension" value="nls" class="mr-2">No lo sé</td>
                         </tr>
                     </tbody>
                 </table>

@@ -4,7 +4,7 @@
 <form id="sintomasForm" method="POST" action="<?= ROOT ?>sintomas/store" class="w-100 h-100">
     <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 enfermedades">
         <div class="bgSecundarios_white w-100 h-100 rounded">
-            <div class="h-75 d-flex flex-column align-items-center justify-content-center p-5">
+            <div class="h-75 d-flex flex-column align-items-center justify-content-center p-5 mt-2">
                 <h4 class="textblue_primary text-center pb-4">Vigilar mis síntomas</h4>
                 <div class="d-flex flex-row align-items-flex-start justify-content-center w-100 h-100">
                     <div class="d-flex flex-column gap-15 textblue_primary position-relative" style="width: 333px;">
@@ -21,7 +21,7 @@
                         <div id="warningMessage"><i class="fa fa-exclamation-circle"></i> ¡Por favor, intente agregar más síntomas.</div>
                     </div>
                     <div class="form-group col-md-6 d-flex justify-content-center align-items-center w-50">
-                        <img src="<?= ASSETS ?>/dist/img/Photo4.png" alt="" style="width: inherit;">
+                        <img src="<?= ASSETS ?>/dist/img/Photo4.png" alt="" style="width: initial;">
                     </div>
                 </div>
             </div>

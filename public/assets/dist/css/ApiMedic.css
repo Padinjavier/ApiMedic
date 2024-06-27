@@ -81,11 +81,11 @@ border: none;
 .button_atras{
 /* Blue/secondary */
 background: var(--Blue_secondary);
-color: var(--Blue_accent);
+color: var(--Blue_primary);
 }
 .button_siguiente{
 /* Blue/secondary */
-background: var(--Blue_accent);
+background: var(--Blue_primary);
 color: var(--Blue_secondary);
 }
 
@@ -150,10 +150,10 @@ ul {
     transform: translateX(-50%);
   }
 
-      .bgblue_primary {
-        background-color: #007bff;
+      /* .bgblue_primary {
+        background-color: var(--Blue_primary);
         color: #fff;
-    }
+    } */
 
     .bgSecundarios_white {
         background-color: #fff;
@@ -266,10 +266,10 @@ ul {
 
 
    /* seleccion de sintomas  */
-   .bgblue_primary {
-    background-color: #007bff;
+   /* .bgblue_primary {
+    background-color: var(--Blue_primary);
     color: #fff;
-}
+} */
 
 .bgSecundarios_white {
     background-color: #fff;
