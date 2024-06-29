@@ -1,5 +1,5 @@
 <!-- ******** Navbar Top ******** -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light p-0" style="height: 20vh;">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light p-0 d-none" style="height: 20vh;">
   <!-- Left navbar links -->
   <ul class="navbar-nav h-100" style="width: 100%; display: flex; align-items: center;">
     <li class="nav-item h-100" style="    align-items: center;  display: flex;">

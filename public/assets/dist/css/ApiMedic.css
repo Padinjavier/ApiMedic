@@ -9,7 +9,9 @@
 .textblue_primary {
     color: var(--Blue_primary);
 }
-
+.txblanco{
+  color: var(--Secundarios_white);
+}
 .textSecundarios_black {
     color: var(--Secundarios_black);
 }
