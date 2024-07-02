@@ -207,31 +207,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const menor18 = document.getElementById("menor-18");
   const botonSiguiente = document.querySelector(".button_siguiente");
 
-  // Función para manejar la visibilidad de la pregunta de embarazo y resetear checkboxes
-  function toggleEmbarazoVisibility() {
-    //alert('entra a función toggleEmbarazoVisibility');
-    if (sexoFemenino.checked) {
+// Función para manejar la visibilidad de la pregunta de embarazo y resetear checkboxes
+function toggleEmbarazoVisibility() {
+  //alert('entra a función toggleEmbarazoVisibility');
+  if (sexoFemenino.checked) {
       alert('entra a función toggleEmbarazoVisibility 1');
-      preguntaEmbarazo.style.display = "block"; // Mostrar la pregunta si es Femenino
+      preguntaEmbarazo.classList.remove("d-none"); // Mostrar la pregunta si es Femenino
       // Mostrar todas las alternativas de la pregunta de embarazo
       document
-        .querySelectorAll('input[type="checkbox"][name="embarazo"]')
-        .forEach((checkbox) => {
-          checkbox.checked = false; // Deseleccionar la checkbox
-          checkbox.closest("td").style.display = "block";
-        });
-    } else {
-      preguntaEmbarazo.style.display = "none"; // Ocultar la pregunta si es Masculino
+          .querySelectorAll('input[type="checkbox"][name="embarazo"]')
+          .forEach((checkbox) => {
+              checkbox.checked = false; // Deseleccionar la checkbox
+              checkbox.closest("td").classList.remove("d-none");
+          });
+  } else {
+      preguntaEmbarazo.classList.add("d-none"); // Ocultar la pregunta si es Masculino
       // Ocultar y deseleccionar todas las alternativas de la pregunta de embarazo
       document
-        .querySelectorAll('input[type="checkbox"][name="embarazo"]')
-        .forEach((checkbox) => {
-          checkbox.checked = false; // Deseleccionar la checkbox
-          checkbox.closest("td").style.display = "none"; // Ocultar el contenedor de la checkbox (td)
-        });
-        //alert('entra a función toggleEmbarazoVisibility 2');
-    }
+          .querySelectorAll('input[type="checkbox"][name="embarazo"]')
+          .forEach((checkbox) => {
+              checkbox.checked = false; // Deseleccionar la checkbox
+              checkbox.closest("td").classList.add("d-none"); // Ocultar el contenedor de la checkbox (td)
+          });
+      //alert('entra a función toggleEmbarazoVisibility 2');
   }
+}
 
   // Función para deshabilitar el botón siguiente si no hay una edad válida
   function updateAgeValidation() {
@@ -278,29 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // logica pasientes
 
-// function MostrarItemEmbarazo() {
-//   var generoFemenino = document.getElementById('female').checked;
-//   var divEmbarazo = document.getElementById('item-embarazo'); // Asegúrate de que el div tenga este ID
 
-//   if (generoFemenino) {
-//       divEmbarazo.style.display = 'block'; // Muestra el div para femenino
-//   } else {
-//       divEmbarazo.style.display = 'none'; // Oculta el div para masculino
-//   }
-// }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   var radios = document.querySelectorAll('input[name="sexo"]');
-//   var divEmbarazo = document.getElementById('item-embarazo'); // Asegúrate de que el div tenga este ID
-
-//   radios.forEach(function(radio) {
-//       radio.addEventListener('change', function() {
-//           if (document.getElementById('female').checked == false) {
-//               divEmbarazo.style.display = 'none'; // Oculta el div para masculino
-//           }
-//       });
-//   });
-// });
 
 $(document).ready(function () {
     $.ajax({
