@@ -45,7 +45,7 @@
       <!-- Progress Bar -->
       <div class="progress-container">
         <div class="progress">
-          <div class="progress-bar" role="progressbar" "></div>
+          <div class="progress-bar" role="progressbar"></div>
         </div>
         <div class="circle active" style="left: 0;"><i class="bi bi-check-lg"></i></div>
         <div class="circle" style="left: 25%;">2</div>

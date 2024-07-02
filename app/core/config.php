@@ -5,7 +5,7 @@ define('WEBSITE_TITLE', 'My Website');
 
 // DATABASE VARIABLES
 define('DB_TYPE', 'mysql');
-define('DB_NAME', '');
+define('DB_NAME', 'apimedic');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_HOST', 'localhost');

@@ -7,8 +7,6 @@
   </div>
 </footer> -->
 
-<link rel="stylesheet" href="<?= ASSETS ?>/dist/js/ApiMedic.js">
-
 </div>
 <link rel="stylesheet" href="<?= ASSETS ?>/dist/js/ApiMedic.js">
 <!-- ./wrapper -->

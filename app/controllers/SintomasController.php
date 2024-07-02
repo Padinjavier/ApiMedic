@@ -1,6 +1,12 @@
 <?php
 class SintomasController extends Controller
 {
+    private $sintomasModel;
+    
+    function __construct() 
+    {
+        $this->sintomasModel = $this->loadModel("SintomasModel");
+    }
     function index()
     {
         $data['page_title'] = "Sintomas";
@@ -47,12 +53,25 @@ class SintomasController extends Controller
             }
 
             // Guardar otras variables según sea necesario
-
-            
         }
+
+        // show($_SESSION);
+        // die();
         // Redirigir a la vista de síntomas
         header('Location: ' . ROOT . 'entrevistas');
         exit();
     }
+
+    function ObtenerSintomas() {
+
+        $sintomas = [];
+        $data = $this->sintomasModel->listar_sintomas();
+        // show($data);
+        foreach($data as $index => $sintoma) {
+            array_push($sintomas, $sintoma['sintoma']);
+        }
+        
+        http_response_code(200);
+        echo json_encode($sintomas, JSON_UNESCAPED_UNICODE);
+    }
 }
-?>

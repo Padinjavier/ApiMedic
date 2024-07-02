@@ -103,31 +103,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* seleccion de sintomas  */
 $(document).ready(function () {
-  const sintomas = [
-    "Dolor de cabeza",
-    "Dolor de garganta",
-    "Fiebre",
-    "Tos",
-    "Náuseas",
-    "Fatiga",
-    "Mareos",
-    "Mareo2",
-    "Mareo3",
-    "Mareos4",
-    "Mareos5",
-    "Mareos6",
-    "Mareos7",
-  ];
 
-  $("#sintomaInput").on("input", function () {
-    const input = $(this).val().toLowerCase();
-    const suggestions = sintomas.filter((sintoma) =>
-      sintoma.toLowerCase().includes(input)
-    );
-    $("#suggestions").empty();
-    suggestions.forEach((suggestion) => {
-      $("#suggestions").append("<div>" + suggestion + "</div>");
-    });
+  $.ajax({
+    url: 'http://localhost/ApiMedic/sintomas/ObtenerSintomas',
+    type: 'POST',
+    success: function (response) {
+
+        const sintomas = JSON.parse(response);
+        // Ahora puedes usar la variable sintomas como necesites
+        // const sintomas = [
+        //   "Dolor de cabeza",
+        //   "Dolor de garganta",
+        //   "Fiebre",
+        //   "Tos",
+        //   "Náuseas",
+        //   "Fatiga",
+        //   "Mareos",
+        //   "Mareo2",
+        //   "Mareo3",
+        //   "Mareos4",
+        //   "Mareos5",
+        //   "Mareos6",
+        //   "Mareos7",
+        // ];
+      
+        $("#sintomaInput").on("input", function () {
+          const input = $(this).val().toLowerCase();
+          const suggestions = sintomas.filter((sintoma) =>
+            sintoma.toLowerCase().includes(input)
+          );
+          $("#suggestions").empty();
+          suggestions.forEach((suggestion) => {
+            $("#suggestions").append("<div>" + suggestion + "</div>");
+          });
+        });
+    },
+    error: function (error) {
+        console.log("Error al obtener los datos:", error);
+    }
   });
 
   $(document).on("click", "#suggestions div", function () {
@@ -196,24 +209,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para manejar la visibilidad de la pregunta de embarazo y resetear checkboxes
   function toggleEmbarazoVisibility() {
+    //alert('entra a función toggleEmbarazoVisibility');
     if (sexoFemenino.checked) {
-      preguntaEmbarazo.removeClass = "d-none"; // Mostrar la pregunta si es Femenino
+      alert('entra a función toggleEmbarazoVisibility 1');
+      preguntaEmbarazo.style.display = "block"; // Mostrar la pregunta si es Femenino
       // Mostrar todas las alternativas de la pregunta de embarazo
       document
         .querySelectorAll('input[type="checkbox"][name="embarazo"]')
         .forEach((checkbox) => {
           checkbox.checked = false; // Deseleccionar la checkbox
-          checkbox.closest("td").removeClass = "d-none";
+          checkbox.closest("td").style.display = "block";
         });
     } else {
-      preguntaEmbarazo.style.display = "d-none"; // Ocultar la pregunta si es Masculino
+      preguntaEmbarazo.style.display = "none"; // Ocultar la pregunta si es Masculino
       // Ocultar y deseleccionar todas las alternativas de la pregunta de embarazo
       document
         .querySelectorAll('input[type="checkbox"][name="embarazo"]')
         .forEach((checkbox) => {
           checkbox.checked = false; // Deseleccionar la checkbox
-          checkbox.closest("td").style.display = "d-none"; // Ocultar el contenedor de la checkbox (td)
+          checkbox.closest("td").style.display = "none"; // Ocultar el contenedor de la checkbox (td)
         });
+        //alert('entra a función toggleEmbarazoVisibility 2');
     }
   }
 
@@ -261,3 +277,76 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("change", toggleEmbarazoVisibility);
 });
 // logica pasientes
+
+// function MostrarItemEmbarazo() {
+//   var generoFemenino = document.getElementById('female').checked;
+//   var divEmbarazo = document.getElementById('item-embarazo'); // Asegúrate de que el div tenga este ID
+
+//   if (generoFemenino) {
+//       divEmbarazo.style.display = 'block'; // Muestra el div para femenino
+//   } else {
+//       divEmbarazo.style.display = 'none'; // Oculta el div para masculino
+//   }
+// }
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var radios = document.querySelectorAll('input[name="sexo"]');
+//   var divEmbarazo = document.getElementById('item-embarazo'); // Asegúrate de que el div tenga este ID
+
+//   radios.forEach(function(radio) {
+//       radio.addEventListener('change', function() {
+//           if (document.getElementById('female').checked == false) {
+//               divEmbarazo.style.display = 'none'; // Oculta el div para masculino
+//           }
+//       });
+//   });
+// });
+
+$(document).ready(function () {
+    $.ajax({
+        url: 'http://localhost/ApiMedic/entrevistas/ObtenerSintomasG2',
+        type: 'POST',
+        success: function (response) {
+            // const sintomas = [
+            //     "Escalofríos",
+            //     "Fatiga",
+            //     "Garganta roja",
+            //     "Dolor muscular",
+            //     "Disminución del apetito",
+            //     "Vómitos",
+            //     "Tengo hipertensión."
+            // ];
+
+            const sintomas = JSON.parse(response);
+            const tableBody = document.getElementById('sintomasTableBody');
+
+            sintomas.forEach((sintoma, index) => {
+                const row = document.createElement('tr');
+
+                const checkboxCell = document.createElement('td');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = 'sintomas2[]';
+                checkbox.value = sintoma;
+                checkboxCell.appendChild(checkbox);
+
+                const textCell = document.createElement('td');
+                textCell.textContent = sintoma;
+
+                row.appendChild(checkboxCell);
+                row.appendChild(textCell);
+
+                tableBody.appendChild(row);
+            });
+
+        },
+        error: function (error) {
+            console.log("Error al obtener los datos:", error);
+        }
+    });
+});
+
+$(document).on("click", ".btnPreguntasSintomas", function () {
+  const spanSintoma = document.getElementById('spanSintoma');
+  spanSintoma.innerText = "sintomas";
+});
