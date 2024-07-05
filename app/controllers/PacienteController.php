@@ -23,8 +23,8 @@ class PacienteController extends Controller
             $_SESSION['hipertension'] = $_POST['hipertension'];
             
             
-            
-            
+            // show($_SESSION);
+            // die();
             
             // Guardar otras variables según sea necesario
 

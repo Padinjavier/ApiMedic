@@ -2,20 +2,18 @@
 
 <!-- TU CONTENIDO -->
 
-<h1>Sobre Resultados</h1>
-<?php
-
-if (isset($_SESSION['sintomas2']) && !empty($_SESSION['sintomas2'])) {
-    foreach ($_SESSION['sintomas2'] as $sintoma) {
-        echo "Síntoma2: " . $sintoma . "<br>";
-    }
-}
-echo "--------------------------------------vas a morir ----------------------------------------------------";
-
-
-?>
+<div class="bgSecundarios_white p-5 w-100 h-100 principal">
+    <h4>Luego de analizar sus síntomas:</h4>
+    <ul>
+        <?php
+            if (isset($data['sintomas_paciente']) && !empty($data['sintomas_paciente'])) {
+                foreach ($data['sintomas_paciente'] as $sintoma) {
+                    echo "<li>* " . $sintoma . "</li>";
+                }
+            } 
+        ?>
+    </ul>
+    <h4><?= $data['resultado'] ?></h4>
+</div>
 
 <?php include_once(__DIR__ . '/__includes/__main_content_footer.php'); ?>
-
-
-

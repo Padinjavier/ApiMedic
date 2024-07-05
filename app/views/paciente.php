@@ -39,12 +39,12 @@
             </div>
             <div class="d-flex flex-row gap-15">
                 <label for="female" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
-                    <input type="radio" id="female" name="sexo" value="Femenino" class="d-none toggle-div" data-hide=".generos" data-show=".años">
+                    <input type="radio" id="female" name="sexo" value="F" class="d-none toggle-div" data-hide=".generos" data-show=".años">
                     <i class="bi bi-gender-female display-1"></i>
                     <p>Femenino</p>
                 </label>
                 <label for="male" class="d-flex flex-column align-items-center p-5 m-2 textblue_primary bor_primary bgSecundarios_white rounded" style="width: 275px; height: 200px;">
-                    <input type="radio" id="male" name="sexo" value="Masculino" class="d-none toggle-div" data-hide=".generos" data-show=".años">
+                    <input type="radio" id="male" name="sexo" value="M" class="d-none toggle-div" data-hide=".generos" data-hide data-show=".años">
                     <i class="bi bi-gender-male display-1"></i>
                     <p>Masculino</p>
                 </label>
@@ -116,7 +116,7 @@
                             <td><input type="checkbox" name="alergias" value="no" class="mr-2">No</td>
                             <td><input type="checkbox" name="alergias" value="nls" class="mr-2">No lo sé</td>
                         </tr>
-                        <tr>
+                        <tr id="item-embarazo">
                             <td class="embarazada">Estoy embarazada.</td>
                             <td><input type="checkbox" name="embarazo" value="si" class="mr-2">Sí</td>
                             <td><input type="checkbox" name="embarazo" value="no" class="mr-2">No</td>

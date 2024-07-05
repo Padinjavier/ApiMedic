@@ -24,10 +24,9 @@
                 </div>
             </div>
             <div class="h-25 bortop_primary conten_button pl-4 pr-4">
-                <button type="button" class="button button_atras toggle-div" data-hide=".test"
-                    data-show=".años">Atrás</button>
-                <button type="submit" class="button button_siguiente toggle-div" data-hide=".test"
-                    data-show=".años">Siguiente</button>
+                <button type="button" class="button button_atras toggle-div" onclick="window.location.href='<?= ROOT ?>sintomas'">Atrás</button>
+                <button type="button" class="button button_siguiente toggle-div btnPreguntasSintomas" data-hide=".preguntasdesitomas"
+                    data-show=".intensidadSintoma">Siguiente</button>
             </div>
         </div>
     </div>
@@ -77,11 +76,11 @@
             top: -35px;
         }
     </style>
-    <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100">
+    <div class="bgblue_primary pr-5 pl-5 pb-4 pt-4 w-100 h-100 intensidadSintoma d-none">
         <div class="bgSecundarios_white w-100 h-100 rounded">
             <div class="h-75 d-flex flex-column align-items-center justify-content-center">
                 <div class="h-25 pt-5" style="display: flex; flex-direction: column;  align-items: center;">
-                    <h4 class="textblue_primary">¿Cuál es la intensidad de su dolor de cabeza?</h4>
+                    <h4 class="textblue_primary">¿Cuál es la intensidad de sus <span id="spanSintoma"></span>?</h4>
                     <p>Seleccione una respuesta</p>
                 </div>
                 <div
@@ -127,8 +126,8 @@
                 </div>
             </div>
             <div class="h-25 bortop_primary conten_button pl-4 pr-4">
-                <button type="button" class="button button_atras toggle-div" data-hide=".test"
-                    data-show=".años">Atrás</button>
+                <button type="button" class="button button_atras toggle-div" data-hide=".preguntasdesitomas"
+                    data-show=".preguntasdesitomas">Atrás</button>
                 <button type="submit" class="button button_siguiente toggle-div" data-hide=".test"
                     data-show=".años">Siguiente</button>
             </div>
@@ -163,36 +162,7 @@
 </script>
 
 <script>
-    const sintomas = [
-        "Escalofríos",
-        "Fatiga",
-        "Garganta roja",
-        "Dolor muscular",
-        "Disminución del apetito",
-        "Vómitos",
-        "Tengo hipertensión."
-    ];
-
-    const tableBody = document.getElementById('sintomasTableBody');
-
-    sintomas.forEach((sintoma, index) => {
-        const row = document.createElement('tr');
-
-        const checkboxCell = document.createElement('td');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.name = 'sintomas2[]';
-        checkbox.value = sintoma;
-        checkboxCell.appendChild(checkbox);
-
-        const textCell = document.createElement('td');
-        textCell.textContent = sintoma;
-
-        row.appendChild(checkboxCell);
-        row.appendChild(textCell);
-
-        tableBody.appendChild(row);
-    });
+ 
 </script>
 
 <?php include_once (__DIR__ . '/__includes/__main_content_footer.php'); ?>
